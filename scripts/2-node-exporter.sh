@@ -1,8 +1,9 @@
 #!/bin/bash
-NODE_EXPORTER_VERSION="0.16.0"
-wget https://github.com/prometheus/node_exporter/releases/download/v${NODE_EXPORTER_VERSION}/node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64.tar.gz
-tar -xzvf node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64.tar.gz
-cd node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64
+NODE_EXPORTER_VERSION="0.18.1"
+ARCH="armv7"
+wget https://github.com/prometheus/node_exporter/releases/download/v${NODE_EXPORTER_VERSION}/node_exporter-${NODE_EXPORTER_VERSION}.linux-${ARCH}.tar.gz
+tar -xzvf node_exporter-${NODE_EXPORTER_VERSION}.linux-${ARCH}.tar.gz
+cd node_exporter-${NODE_EXPORTER_VERSION}.linux-${ARCH}
 cp node_exporter /usr/local/bin
 
 # create user
@@ -29,7 +30,7 @@ systemctl daemon-reload
 systemctl start node_exporter
 systemctl enable node_exporter
 
-
+exit 0
 echo "Setup complete.
 Add the following lines to /etc/prometheus/prometheus.yml:
 
