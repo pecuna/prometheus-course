@@ -1,5 +1,5 @@
 #!/bin/bash
-NODE_EXPORTER_VERSION="0.18.1"
+NODE_EXPORTER_VERSION="1.0.1"
 ARCH="armv7"
 wget https://github.com/prometheus/node_exporter/releases/download/v${NODE_EXPORTER_VERSION}/node_exporter-${NODE_EXPORTER_VERSION}.linux-${ARCH}.tar.gz
 tar -xzvf node_exporter-${NODE_EXPORTER_VERSION}.linux-${ARCH}.tar.gz
